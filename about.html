@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <style>
+        body{
+           background:url(back.jpg) no-repeat;
+           background-size: cover;
+           background-attachment: fixed;
+
+       }
+       .button {
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }
+      .button1 {
+        background-color: white; 
+        color: black; 
+        border: 2px solid #045664;
+      }
+      .button1:hover {
+        background-color: #f3df27;
+        color: white;
+      }
+      .button2 {
+        background-color: rgb(238, 173, 76); 
+        color: black; 
+        border: 2px solid #f19813;
+      }
+
+       </style>
+       <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">
+        <button  class="button button2" style="text-decoration: none;">Welcome page</button></a>
+        <a href="about.html"><button  class="button button2" style="text-decoration: none;">About</button></a><br>
+    <img src="unnamed.png" alt="logo" height="300" width="300" style="margin-left: 600px; margin-top: 50px; border-radius:60px ;"><br>
+    <div class="wrapper">
+        <div class="display">
+           <div id="time"></div>
+        </div>
+        <span></span>
+        <span></span>
+     </div>
+     <script>
+        setInterval(()=>{
+          const time = document.querySelector(".display #time");
+          let date = new Date();
+          let hours = date.getHours();
+          let minutes = date.getMinutes();
+          let seconds = date.getSeconds();
+          let day_night = "AM";
+          if(hours > 12){
+            day_night = "PM";
+            hours = hours - 12;
+          }
+          if(seconds < 10){
+            seconds = "0" + seconds;
+          }
+          if(minutes < 10){
+            minutes = "0" + minutes;
+          }
+          if(hours < 10){
+            hours = "0" + hours;
+          }
+          time.textContent = hours + ":" + minutes + ":" + seconds + " "+ day_night;
+        });
+     </script> 
+    
+</body>
+</html>
